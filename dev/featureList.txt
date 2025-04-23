@@ -1,0 +1,96 @@
+ECONOMY: - all done
+    - Purchasing Items
+        - Roads
+        - Settlements
+        - Cities
+        - Dev Cards
+
+    - Bank Trading
+        - 4:1 Default Trade
+        - 3:1 Harbor Trade
+        - 2:1 Harbor Trade
+
+    - Player Trading
+        - Resource Transfer
+        - Mutual Trade Agreement (double authentication)
+        - Selecting Resources
+
+    - Rolling the Dice
+        - Happens at the start of a player's turn
+        - Add two random numbers 1-6 together
+        - Check if result is 7
+            - Calculate amount of resources for each player to return to bank
+            - Going in playerID order, each player returns selected resources
+            - Move Robber
+                - Cannot move robber to its current location
+            - Check for enemy settlements around new robber placement
+                - Allow player to select enemy if they exist
+                - Steal random resource from enemy
+        - Check if settlement/city borders same numbered tile
+            - Add 1 resource per settlement
+            - Add 2 resources per city
+
+PLACEMENT: - done (a lot of checks are left out but there is no time for that)
+    - Placing Settlements
+        - Check if spot is unoccupied
+        - Check if connected to existing roads
+        - Check if at least 1 spot exists between existing and new Settlements
+        - Check if can afford Settlements
+        - Check if have settlements left (each player only gets 5 settlements to use)
+
+    - Placing Cities
+        - Check if settlement to upgrade exists
+        - Check if can afford City
+
+    - Placing Roads
+        - Check if spot is unoccupied
+        - Check if connected to existing roads/settlements/Cities
+        - Scan for longest road
+
+VICTORY POINTS:
+    - Longest Road
+        - Check if at least 5 roads are in a line
+        - Check for enemy settlement/city interruption
+        - Mark used roads to avoid loops resulting in infinite road length
+        - Check if road is longer than enemy roads
+
+    - Largest Army
+        - Check for at least 3 knight dev cards
+        - Check if more knights than enemies
+
+    - Winning
+        - Check if has 10 victory points
+            - Settlements are worth 1 point
+            - Cities are worth 2 points
+            - VP dev cards are worth 1 point
+            - Longest Road is worth 2 points
+            - Largest Army is worth 2 points
+
+DEV CARDS: - done
+    - Victory Point
+        - Add 1 victory point to player when drawn
+        - Increase hidden counter by 1 so that public VP count doesn't reveal VP card
+        - Dev Card remains in list for rest of game
+
+    - Knight (When Used):
+        - Move Robber
+            - Cannot move robber to its current location
+        - Check for enemy settlements around new robber placement
+            - Allow player to select enemy if they exist
+            - Steal random resource from enemy
+        - Add 1 to army size
+        - Dev Card is removed from list
+
+    - Monopoly (When Used):
+        - Allow player to choose resource to monopolize
+        - Transfer all enemy resources of specified type to user
+        - Dev Card is removed from list
+
+    - Year of Plenty (When Used):
+        - Allow player to choose 2 resources to collect
+        - Dev Card is removed from list
+
+    - Road Building (When Used):
+        - Give player 2 roads to place
+            - Follow existing road placement rules
+        - Dev Card is removed from list

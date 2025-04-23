@@ -1,0 +1,172 @@
+// Main screen
++-+ Catan +-+ Current Player: Orange +-+ Last Number Rolled: 00 +---------------------------------------------------------------------------------------------------------------------------------------+
+| +--------------------------------------+-----------------------+ +-----------------------------------------------------------------+ +--------------------------------------------------------------+ |
+| │RESOURCE CARDS:                       |DEVELOPMENT CARDS:     │ │                                                                 │ │RESOURCE CARDS:                                               │ |
+| |+Clay-++Rock-++Wheat++Wood-++Wool-+   |+Army-++Kn---++VP---+  | |                            .-------.                            │ |+Clay-+ +Rock-+ +Wheat+ +Wood-+ +Wool-+                       | |
+| ││     ││     ││     ││     ││     │   ||     ||     ||     |  │ │                           / ^^ ^ |^ \                           │ ││     │ │     │ │     │ │     │ |     |                       │ |
+| ││     ││     ││     ││     ││     │   ||     ||     ||     |  │ │                  / 2:1 \ / ^| ^ ^ ^^ \ / 2:1 \                  │ ││     │ │     │ │     │ │     │ |     |                       │ |
+| ││     ││     ││     ││     ││     │   ||     ||     ||     |  │ │                 .-------(  ^^ 009 ^|  )-------.                 │ ││     │ │     │ │     │ │     │ |     |                       │ |
+| ││     ││     ││     ││     ││     │   ||     ||     ||     |  │ │                /  vv .0  \ ^| ^ ^^ ^ /   - _ n \                │ ││     │ │     │ │     │ │     │ |     |                       │ |
+| │+-----++-----++-----++-----++-----+   |+-----++-----++-----+  │ │               /  Oo  o. v \ ^ ^^ |^ / mmn  __   \               │ │+-----+ +-----+ +-----+ +-----+ +-----+                       │ |
+| │  x01    x02    x03    x04    x05     |  x03    x03    x03    │ │   -- .-------(  v  002 .o  )-------(  _  010  m  )-------. --   │ │  x01     x02     x03     x04     x5                          │ |
+| +-------------------+------------------+                       │ │ 3:1 / /\ _/\  \   o.  vv  /  vv .0  \  mn  m _  / /\ _/\  \ 3:1 │ |                                                              │ |
+| |PLACED BUILDINGS:  |SPECIAL CARDS:    |+Mono-++YoP--++RB---+  │ │  \ / /^ \  _^  \ o.  oO  /  Oo  o. v \ n  ___m / /^ \  _^  \ /  | +--------------------------------------------------------------+ |
+| |Roads:       00/15 |+LA-+             ||     ||     ||     |  │ │   (  ^  010  \  )-------(  v  004 .o  )-------(  ^  008  \  )   │ |DEVELOPMENT CARDS:                                            │ |
+| │Settlements: 00/05 ||   |             ||     ||     ||     |  │ │    \  ^/\ /\ _ /   - _ n \   o.  vv  / ^^ ^ |^ \  ^/\ /\ _ /    │ │+Army-+ +???--+                                               │ |
+| │Cities:      00/04 ||   |             ||     ||     ||     |  │ │     \ /  / ^\ / mmn  __   \ o.  oO  / ^| ^ ^ ^^ \ /  / ^\ /     │ ││     │ │     │                                               │ |
+| │Harbors:     00/09 |+---+             ||     ||     ||     |  │ │      )-------(  _  006  m  )-------(  ^^ 003 ^|  )-------(      │ ││     │ │     │                                               │ |
+| +-------------------+------------------++-----++-----++-----+  │ │     / vwvvwwv \  mn  m _  /  ~~     \ ^| ^ ^^ ^ /  vv .0  \     │ |│     │ │     │                                               │ |
+| |RED TEAM - P1      |VICTORY PTS: 00/10|  x03    x03    x03    │ │    / vw^wvvwvw \ n  ___m /       ~~  \ ^ ^^ |^ /  Oo  o. v \    │ |│     │ │     │                                               │ |
+| +-------------------+------------------+-----------------------+ │   (  wv 012 vw  )-------(  ~~ ROB ~~  )-------(  v  005 .o  )   │ |+-----+ +-----+                                               | |
+| +--------------------------------------+-----------------------+ │  / \ vv^wvv^^w / ^^ ^ |^ \      ~~   / vwvvwwv \   o.  vv  / \  │ |  x02     x05                                                 | |
+| │RESOURCE CARDS:                       |DEVELOPMENT CARDS:     │ │ 2:1 \ wwvv^ww / ^| ^ ^ ^^ \  ~~     / vw^wvvwvw \ o.  oO  / 2:1 │ |                                                              │ |
+| |+Clay-++Rock-++Wool-+                 |+???--+                | │   -- )-------(  ^^ 011 ^|  )-------(  wv 004 vw  )-------( --   │ +---------------------------+----------------------------------+ |
+| ││     ││     ││     │                 ||     |                │ │     / vwvvwwv \ ^| ^ ^^ ^ / /\ _/\  \ vv^wvv^^w /  vv .0  \     │ |PLACED BUILDINGS:          |SPECIAL CARDS:                    │ |
+| ││     ││     ││     │                 ||     |                │ │    / vw^wvvwvw \ ^ ^^ |^ / /^ \  _^  \ wwvv^ww /  Oo  o. v \    │ |                           |+Longest-Road-+                   │ |
+| ││     ││     ││     │                 ||     |                │ │   (  wv 009 vw  )-------(  ^  003  \  )-------(  v  011 .o  )   │ |Roads:                00/15||             |                   │ |
+| ││     ││     ││     │                 ||     |                │ │    \ vv^wvv^^w / ^^ ^ |^ \  ^/\ /\ _ / vwvvwwv \   o.  vv  /    │ |                           ||             |                   │ |
+| │+-----++-----++-----+                 |+-----+                │ │     \ wwvv^ww / ^| ^ ^ ^^ \ /  / ^\ / vw^wvvwvw \ o.  oO  /     │ |Settlements:          00/05||             |                   │ |
+| │  x01    x02    x05                   |  x02                  │ │      '-------(  ^^ 008 ^|  )-------(  wv 006 vw  )-------'      │ |                           ||             |                   │ |
+| +-------------------+------------------+                       │ │             / \ ^| ^ ^^ ^ /   - _ n \ vv^wvv^^w / \             │ |Cities:               00/04||             |                   | |
+| |PLACED BUILDINGS:  |SPECIAL CARDS:    |                       │ │            2:1 \ ^ ^^ |^ / mmn  __   \ wwvv^ww / 3:1            │ |                           ||             |                   │ |
+| |Roads:        00/15|                  |                       │ │              -- '-------(  _  005  m  )-------' --              │ |Harbors:              00/09||             |                   │ |
+| │Settlements:  00/05|                  |                       │ │                          \  mn  m _  /                          │ |                           |+-------------+                   │ |
+| │Cities:       00/04|                  |                       │ │                           \ n  ___m /                           │ |                           |                                  │ |
+| │Harbors:      00/09|                  |                       │ │                            '-------'                            │ |                           |                                  │ |
+| +-------------------+------------------+                       │ │                             \ 3:1 /                             │ +---------------------------+----------------------------------+ |
+| |ORANGE TEAM - P2   |VICTORY PTS: 00/10|                       │ │                                                                 │ |WHITE TEAM - PLAYER 3      |VICTORY POINTS: 00/10             | |
+| +-------------------+------------------+-----------------------+ +-----------------------------------------------------------------+ +---------------------------+----------------------------------+ |
+| +--------------------------------------------------------------+ +--------------------------+--------------------------------------+ +----------------------+-----------------------+ +-------------+ |
+| |PURCHASE BUILDING/DEVELOPMENT CARD:                           | |SELECT DEVELOPMENT CARD:  |DESCRIPTION (Knight):                 | |TRADE WITH THE BANK:  |TRADE WITH A PLAYER:   | |             | |
+| |                                                              │ |                          |                                      | |                      |                       | |     End     | |
+| |   Road         (Costs 1 Clay, 1 Wood)                        │ |   Show/Hide Dev Cards    |The knight allows you to move the     | |   4:1 Any Trade      |   Trade with Red      | |    Round    | |
+| |                                                              │ |                          |robber wherever you would like and    | |   3:1 Any Trade      |                       | |             | |
+| |   Settlement   (Costs 1 Clay, 1 Wheat, 1 Wood, 1 Wool)       │ |                          |then steal random resource from 1     | |                      |   Trade with Orange   | |    Start    | |
+| |                                                              │ |   Knight (x00)           |player with either a city or a        | |   2:1 Clay Trade     |                       | |    Again    | |
+| |   City         (Costs 2 Rocks, 3 Wheat; Replaces Settlement) │ |   Monopoly (x00)         |settlement that the robber was        | |   2:1 Rock Trade     |   Trade with Blue     | |             | |
+| |                                                              │ |   Year of Plenty (x00)   |moved to. The size of your army also  | |   2:1 Wheat Trade    |                       | |    Leave    | |
+| |   Dev Card     (Costs 1 Rock, 1 Wheat, 1 Wool)               │ |   Road Building (x00)    |increases when the knight if played.  | |   2:1 Wood Trade     |   Trade with White    | |    Catan    | |
+| |                                                              │ |                          |                                      | |   2:1 Wool Trade     |                       | |             | |
+| +--------------------------------------------------------------+ +--------------------------+--------------------------------------+ +----------------------+-----------------------+ +-------------+ |
+| |PURCHASE A BUILDING OR A DEVELOPMENT CARD                     | |USE A DEVELOPMENT CARD                                           | |TRADE WITH THE BANK AND/OR A PLAYER           | | MANAGE GAME | |
+| +--------------------------------------------------------------+ +-----------------------------------------------------------------+ +----------------------------------------------+ +-------------+ |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+// Random alternate interfaces
++--------------------------------------------------------------+ +--------------------------+--------------------------------------+ +----------------------+-----------------------+ +-------------+
+|PURCHASE BUILDING/DEVELOPMENT CARD:                           | |SELECT DEVELOPMENT CARD:  |DESCRIPTION (Knight):                 | |TRADE WITH THE BANK:  |TRADE WITH A PLAYER:   | |             |
+|                                                              │ |                          |                                      | |                      |                       | |     End     |
+|   Road         (Costs 1 Clay, 1 Wood)                        │ |   Show/Hide Dev Cards    |N/A: No Developement Card Selected    | |   Trade in x Clay    |   Clay:  < - x00 + >  | |    Round    |
+|                                                              │ |                          |                                      | |   Trade in x Rock    |   Rock:    - x00 +    | |             |
+|   Settlement   (Costs 1 Clay, 1 Wheat, 1 Wood, 1 Wool)       │ |                          |                                      | |   Trade in x Wheat   |   Wheat:   - x00 +    | |    Start    |
+|                                                              │ |                          |                                      | |   Trade in x Wood    |   Wood:    - x00 +    | |    Again    |
+|   City         (Costs 2 Rocks, 3 Wheat; Replaces Settlement) │ |                          |                                      | |   Trade in x Wool    |   Wool:    - x00 +    | |             |
+|                                                              │ |                          |                                      | |                      |                       | |    Leave    |
+|   Dev Card     (Costs 1 Rock, 1 Wheat, 1 Wool)               │ |                          |                                      | |   Current Trade:     |     You Will Get:     | |    Catan    |
+|                                                              │ |                          |                                      | |   x ????? : 1 ?????  |  x00 x00 x00 x00 x00  | |             |
++--------------------------------------------------------------+ +--------------------------+--------------------------------------+ +----------------------+-----------------------+ +-------------+
+|PURCHASE A BUILDING OR A DEVELOPMENT CARD                     | |USE A DEVELOPMENT CARD                                           | |TRADE WITH THE BANK AND/OR A PLAYER           | | MANAGE GAME |
++--------------------------------------------------------------+ +-----------------------------------------------------------------+ +----------------------------------------------+ +-------------+
+
+// Other development card descriptions
++--------------------------------------++--------------------------------------++--------------------------------------++--------------------------------------+
+|DESCRIPTION (Knight):                 ||DESCRIPTION (Monopoly):               ||DESCRIPTION (Year of Plenty):         ||DESCRIPTION (Road Building):          |
+|                                      ||                                      ||                                      ||                                      |
+|The knight allows you to move the     ||Playing the Monopoly card allows you  ||Playing the Year of Plenty card       ||Playing the Road Building card allows |
+|robber wherever you would like and    ||to declare one of the five resource   ||allows you to take 2 resources of     ||you to place 2 roads, abiding by      |
+|then steal random resource from 1     ||types to monopolize. When it is       ||your choice from the bank. This card  ||normal rules, wherever you would like |
+|player with either a city or a        ||monopolized, all players with a       ||is discarded when played.             ||for free. This card is discarded when |
+|settlement that the robber was        ||resource of that type must give you   ||                                      ||played.                               |
+|moved to. The size of your army also  ||their entire supply of that resource. ||                                      ||                                      |
+|increases when the knight if played.  ||This card is discarded when played.   ||                                      ||                                      |
+|                                      ||                                      ||                                      ||                                      |
++--------------------------------------++--------------------------------------++--------------------------------------++--------------------------------------+
+
+// Alternate Dev Card Interfaces
+// Robber/Knight stuff
++---------------------------------------+-------------------------+ +---------------------------------------+-------------------------+
+|  RESOURCE CARDS:                      |   RETURNING RESOURCES:  | |  PLAYER [Player]'S RESOURCE CARDS:    |   STEAL FROM:           |
+|                                       |                         | |                                       |                         |
+|  +Clay-++Rock-++Wheat++Wood-++Wool-+  |   Clay:   < - x00 + >   | |  +Clay-++Rock-++Wheat++Wood-++Wool-+  |   Steal from Red        |
+|  │     ││     ││     ││     ││     │  |   Rock:   < - x00 + >   | |  │     ││     ││     ││     ││     │  |                         |
+|  │     ││     ││     ││     ││     │  |   Wheat:  < - x00 + >   | |  │     ││     ││     ││     ││     │  |   Steal from Orange     |
+|  │     ││     ││     ││     ││     │  |   Wood:   < - x00 + >   | |  │     ││     ││     ││     ││     │  |                         |
+|  │     ││     ││     ││     ││     │  |   Wool:   < - x00 + >   | |  │     ││     ││     ││     ││     │  |   Steal from Blue       |
+|  +-----++-----++-----++-----++-----+  |                         | |  +-----++-----++-----++-----++-----+  |                         |
+|    x01    x02    x03    x04    x05    |    Returned: 00 / 00    | |    x01    x02    x03    x04    x05    |   Steal from White      |
+|                                       |                         | |                                       |                         |
++---------------------------------------+-------------------------+ +---------------------------------------+-------------------------+
+|PLAYER [Player], RETURN x RESOURCES TO THE BANK                  | |PLAYER [Turn], CHOOSE A PLAYER TO STEAL A RANDOM RESOURCE FROM   |
++-----------------------------------------------------------------+ +-----------------------------------------------------------------+
+
+// Monopoly and Year of Plenty Dev Cards
++---------------------------------------+-------------------------+ +---------------------------------------+-------------------------+
+|  RESOURCE CARDS:                      |    CHOOSE A RESOURCE:   | |  RESOURCE CARDS:                      |  CHOOSE TWO RESOURCES:  |
+|                                       |                         | |                                       |                         |
+|  +Clay-++Rock-++Wheat++Wood-++Wool-+  |     Monopolize Clay     | |  +Clay-++Rock-++Wheat++Wood-++Wool-+  |   Clay:   < - x00 + >   |
+|  │     ││     ││     ││     ││     │  |     Monopolize Rock     | |  │     ││     ││     ││     ││     │  |   Rock:   < - x00 + >   |
+|  │     ││     ││     ││     ││     │  |     Monopolize Wheat    | |  │     ││     ││     ││     ││     │  |   Wheat:  < - x00 + >   |
+|  │     ││     ││     ││     ││     │  |     Monopolize Wood     | |  │     ││     ││     ││     ││     │  |   Wood:   < - x00 + >   |
+|  │     ││     ││     ││     ││     │  |     Monopolize Wool     | |  │     ││     ││     ││     ││     │  |   Wool:   < - x00 + >   |
+|  +-----++-----++-----++-----++-----+  |                         | |  +-----++-----++-----++-----++-----+  |                         |
+|    x01    x02    x03    x04    x05    |     Receive 00 ?????    | |    x01    x02    x03    x04    x05    |     0 / 2 Resources     |
+|                                       |                         | |                                       |                         |
++---------------------------------------+-------------------------+ +---------------------------------------+-------------------------+
+|PLAYER [Turn], CHOOSE A RESOURCE TO MONOPOLIZE                   | |PLAYER [Turn], CHOOSE TWO RESOURCES TO GET FROM THE BANK         |
++-----------------------------------------------------------------+ +-----------------------------------------------------------------+
+
+// Pre-game placement
++-+ Catan +-+ Current Player: Orange +--------------------------------+
+| +-----------------------------------------------------------------+ |
+| │                                                                 │ |
+| |                            .-------.                            │ |
+| │                           / ^^ ^ |^ \                           │ |
+| │                  / 2:1 \ / ^| ^ ^ ^^ \ / 2:1 \                  │ |
+| │                 .-------O  ^^ 009 ^|  )-------.                 │ |
+| │                /  vv .0  \ ^| ^ ^^ ^ /   - _ n \                │ |
+| │               /  Oo  o. v \ ^ ^^ |^ / mmn  __   \               │ |
+| │   -- .-------(  v  002 .o  )-------(  _  010  m  )-------. --   │ |
+| │ 3:1 / /\ _/\  \   o.  vv  /  vv .0  \  mn  m _  / /\ _/\  \ 3:1 │ |
+| │  \ / /^ \  _^  \ o.  oO  /  Oo  o. v \ n  ___m / /^ \  _^  \ /  | |
+| │   O  ^  010  \  )-------(  v  004 .o  )-------O  ^  008  \  )   │ |
+| │    \  ^/\ /\ _ /   - _ n \   o.  vv  / ^^ ^ |^ \  ^/\ /\ _ /    │ |
+| │     \ /  / ^\ / mmn  __   \ o.  oO  / ^| ^ ^ ^^ \ /  / ^\ /     │ |
+| │      )-------(  _  006  m  O-------(  ^^ 003 ^|  )-------(      │ |
+| │     / vwvvwwv \  mn  m _  /  ~~     \ ^| ^ ^^ ^ /  vv .0  \     │ |
+| │    / vw^wvvwvw \ n  ___m /       ~~  \ ^ ^^ |^ /  Oo  o. v \    │ |
+| │   (  wv 012 vw  )-------(  ~~ ROB ~~  )-------(  v  005 .o  #   │ |
+| │  / \ vv^wvv^^w / ^^ ^ |^ \      ~~   / vwvvwwv \   o.  vv  / \  │ |
+| │ 2:1 \ wwvv^ww / ^| ^ ^ ^^ \  ~~     / vw^wvvwvw \ o.  oO  / 2:1 │ |
+| │   -- )-------(  ^^ 011 ^|  )-------#  wv 004 vw  )-------( --   │ |
+| │     / vwvvwwv \ ^| ^ ^^ ^ / /\ _/\  \ vv^wvv^^w /  vv .0  \     │ |
+| │    / vw^wvvwvw \ ^ ^^ |^ / /^ \  _^  \ wwvv^ww /  Oo  o. v \    │ |
+| │   (  wv 009 vw  )-------(  ^  003  \  )-------(  v  011 .o  )   │ |
+| │    \ vv^wvv^^w / ^^ ^ |^ \  ^/\ /\ _ / vwvvwwv \   o.  vv  /    │ |
+| │     \ wwvv^ww / ^| ^ ^ ^^ \ /  / ^\ / vw^wvvwvw \ o.  oO  /     │ |
+| │      '-------(  ^^ 008 ^|  )-------(  wv 006 vw  )-------'      │ |
+| │             / \ ^| ^ ^^ ^ /   - _ n \ vv^wvv^^w / \             │ |
+| │            2:1 \ ^ ^^ |^ / mmn  __   \ wwvv^ww / 3:1            │ |
+| │              -- '-------(  _  005  m  )-------' --              │ |
+| │                          \  mn  m _  /                          │ |
+| │                           \ n  ___m /                           │ |
+| │                            '-------'                            │ |
+| │                             \ 3:1 /                             │ |
+| │                                                                 │ |
+| +-----------------------------------------------------------------+ |
++---------------------------------------------------------------------+
+
+| +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ +-------------+ |
+| |                                                                                                                                                                                   | |             | |
+| |                                                                                                                                                                                   | |     End     | |
+| |                                                                                                                                                                                   | |    Round    | |
+| |                        ###    ####     ###    #   #    ###    #####           #####   #####    ###    #   #          #   #   #####   #   #    ####   ###                          | |             | |
+| |                       #   #   #   #   #   #   ##  #   #       #                 #     #       #   #   ## ##          #   #     #     ##  #   #       ###                          | |    Start    | |
+| |                       #   #   ####    #####   # # #   # ###   ###               #     ###     #####   # # #          # # #     #     # # #    ###    ###                          | |    Again    | |
+| |                       #   #   #   #   #   #   #  ##   #   #   #                 #     #       #   #   #   #          ## ##     #     #  ##       #                                | |             | |
+| |                        ###    #   #   #   #   #   #    ####   #####             #     #####   #   #   #   #          #   #   #####   #   #   ####    ###                          | |    Leave    | |
+| |                                                                                                                                                                                   | |    Catan    | |
+| |                                                                                                                                                                                   | |             | |
+| |                                                                                                                                                                                   | +-------------+ |
+| |                                                                                                                                                                                   | | MANAGE GAME | |
+| +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ +-------------+ |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
